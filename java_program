@@ -1,0 +1,23 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileImporter {
+    public static void main(String[] args) {
+        // Specify the path of the file you want to import
+        String filePath = "example.txt"; // Change the file path as needed
+
+        // Create a BufferedReader to read the file
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            
+            // Read the file line by line
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line); // Print each line to the console
+            }
+        } catch (IOException e) {
+            // Handle exceptions (file not found, read error, etc.)
+            e.printStackTrace();
+        }
+    }
+}
